@@ -16,13 +16,21 @@ class Numpy
         vector<vector<T>> arr2;
         vector<vector<vector<T>>> arr3;
         int list_size;
+        using dim = struct dim
+        {
+            int idx;
+            int dimension;
+            dim *next;
+        };
 
     public:
         Numpy();
         void array(initializer_list<T> list);
-        void display();
         void array(initializer_list<initializer_list<T>> list);
         void array(initializer_list<initializer_list<initializer_list<T>>> list);
+        void display();
+
+        
 };
 
 #include "Numpy.tpp"

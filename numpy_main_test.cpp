@@ -3,13 +3,9 @@
 int main()
 {
     Numpy<int> np;
-    np.array({1, 2, 3});
     
+    np.array( { {1, 2, 3, 4}, {2, 4}, {3, 6, 9, 12, 15} } );    
     np.display();
 
-    np.array({{1, 2, 3}, {2, 4, 6}});
-    
-    np.display();
-
-    return (0);
+    return 0;
 }
