@@ -24,12 +24,10 @@ void Numpy<T>::array(initializer_list < initializer_list < T > > list)
 {
     arr2.resize(list.size());
 
-    // Redimensionnement correct
     for (size_t i = 0; i < list.size(); i++) {
         arr2[i].resize((*next(list.begin(), i)).size());  
     }
 
-    // Insertion des valeurs
     int i = 0;
     for (auto& sublist : list)
     {    
