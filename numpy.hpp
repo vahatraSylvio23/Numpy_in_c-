@@ -25,13 +25,12 @@ class Numpy
 
     public:
         Numpy();
-        void array(initializer_list<T> list);
-        void array(initializer_list<initializer_list<T>> list);
-        void array(initializer_list<initializer_list<initializer_list<T>>> list);
+        Numpy<T> array(initializer_list<T> list);
+        Numpy<T> array(initializer_list<initializer_list<T>> list);
+        Numpy<T> array(initializer_list<initializer_list<initializer_list<T>>> list);
         void display();
-
-        
-};
+        friend ostream& operator<<(ostream& out, const Numpy<T>& np);
+    };
 
 #include "Numpy.tpp"
 #endif

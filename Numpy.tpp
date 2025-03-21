@@ -8,7 +8,7 @@ Numpy<T>::Numpy()
 }
 
 template <typename T>
-void Numpy<T>::array(initializer_list < T > list)
+Numpy<T> Numpy<T>::array(initializer_list < T > list)
 {
     int i = 0;
     for(auto index : list)
@@ -16,15 +16,16 @@ void Numpy<T>::array(initializer_list < T > list)
         arr1.push_back(index);
         i++;
     }
+    return (*this);
 }
 
-
 template < typename T >
-void Numpy<T>::array(initializer_list < initializer_list < T > > list)
+Numpy<T> Numpy<T>::array(initializer_list < initializer_list < T > > list)
 {
     arr2.resize(list.size());
 
-    for (size_t i = 0; i < list.size(); i++) {
+    for (size_t i = 0; i < list.size(); i++) 
+    {
         arr2[i].resize((*next(list.begin(), i)).size());  
     }
 
@@ -39,10 +40,11 @@ void Numpy<T>::array(initializer_list < initializer_list < T > > list)
         }
         i++;
     }
+    return (*this);
 }
 
-/* template < typename T >
-void Numpy<T>::array(initializer_list < initializer_list < T > > list)
+/*template < typename T >
+Numpy<T> Numpy<T>::array(initializer_list < initializer_list < T > > list)
 {
     int i , j, k;
 
@@ -65,7 +67,7 @@ void Numpy<T>::array(initializer_list < initializer_list < T > > list)
 }  */
 
 /* template < typename T >
-void Numpy<T>::display(Numpy<T> np)
+Numpy<T> Numpy<T>::display(Numpy<T> np)
 {
     int i = 0;
     for(i = 0 ; i < arr1.size() ; i++)
@@ -75,11 +77,14 @@ void Numpy<T>::display(Numpy<T> np)
     cout << endl;
 }
  */
+
 template < typename T >
 void Numpy<T>::display()
 {
-    if (!arr1.empty()) {
-        for (const auto& val : arr1) {
+    if (!arr1.empty()) 
+    {
+        for (const auto& val : arr1) 
+        {
             cout << val << " ";
         }
         cout << endl;
